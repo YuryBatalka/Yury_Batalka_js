@@ -1,0 +1,46 @@
+function Point(x, y) {
+            this.x = x;
+            this.y = y;
+            this.getDistance = function (point) {
+                return Math.sqrt(Math.pow((this.x + point.x), 2) + Math.pow((this.y + point.y), 2));
+            }
+            this.toString = function () {
+                return "point (" + this.x + "," + this.y + ")";
+            }
+            this.clone = function () {
+                return new Point(this.x, this.y);
+            }
+        }
+        function Line(pointA, pointB) {
+            this.start = pointA.clone();
+            this.end = pointB.clone();
+            this.length = function () {
+                return this.start.getDistance(this.end);
+            }
+            this.toString = function () {
+                return "Line: start " + this.start + ", end " + this.end;
+            }
+        }
+        function checkTriangle(pointA, pointB, pointC) {
+            var lengthA = pointA.length();
+            var lengthB = pointB.length();
+            var lengthC = pointC.length();
+            return lengthA + lengthA > lengthC &&
+                   lengthB + lengthC > lengthA &&
+                   lengthA + lengthC > lengthB;
+        }
+        var pointA = new Point(1, 5);
+        var pointB = new Point(2, 6);
+        var pointC = new Point(7, 1);
+        var AB = new Line(pointA, pointB);
+        var BC = new Line(pointB, pointC);
+        var AC = new Line(pointA, pointC);
+        console.log (pointA);
+        console.log (pointB);
+        console.log (pointC);
+        console.log ();
+        console.log (AB);
+        console.log (BC);
+        console.log (AC);
+        console.log ();
+        console.log ("Triangle " + checkTriangle(AB,BC,AC));
