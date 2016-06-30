@@ -1,0 +1,18 @@
+function check(expression) {
+            var brackets = 0;
+            for (var symbol in expression) {
+                if (expression[symbol] == '(') {
+                    brackets++;
+                }
+                if (expression[symbol] == ')') {
+                    brackets--;
+                }
+                if (brackets < 0) {
+                    return false;
+                }
+            }
+            if (brackets == 0) {
+                return true;
+            } else return false;
+        }
+console.log (check ("()"));

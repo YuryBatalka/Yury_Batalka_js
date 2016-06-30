@@ -1,0 +1,7 @@
+var text = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days. ";
+
+        function find(substring) {
+            var pattern = new RegExp("in", "gi");
+            return text.match(pattern).length;
+        }
+ console.log (find(text));
