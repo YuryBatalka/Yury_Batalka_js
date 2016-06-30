@@ -1,0 +1,17 @@
+function parseUrl() {
+            var url = `http://www.tut.by/forum/index.php` ;
+            takeInfo(url);
+        }
+        function takeInfo (url) {
+            var parsedUrl = {
+                protocol: '',
+                server: '',
+                resource: '',
+            }
+            parsedUrl.protocol = url.match(/(.*):\/\//)[1];
+            parsedUrl.server = url.match(/:\/\/(.*?)\//)[1];
+            parsedUrl.resource = url.match(/[a-zA-Z](\/.*)/)[1];
+            console.log(parsedUrl);
+            return parsedUrl.toString();
+        };
+parseUrl ();
