@@ -1,0 +1,10 @@
+
+var c = function comp (a,b) {
+	if (a==b) 
+		console.log (1)
+	else
+		console.log (-1);
+}
+
+c ("abc","abc");
+c ("abC","abc");
