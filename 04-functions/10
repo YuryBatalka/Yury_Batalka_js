@@ -1,0 +1,5 @@
+function copyright () {
+	var abc = function (a) {a = "\u00A9"+a; return a;}
+	return abc
+	} ;
+console.log ( copyright ()("EPAM") );
