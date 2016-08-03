@@ -1,0 +1,6 @@
+<html>
+	<input id="elem" type="button" value="Message"/>
+			<script>
+					elem.onclick = function() { console.log("message in console"); }
+			</script>
+</html>

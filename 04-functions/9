@@ -1,0 +1,12 @@
+
+function splitToWords (msg,callback) {
+var result = msg.split (" ");
+callback (result);
+}
+
+splitToWords ("asb abc", function toConsole (b) {
+	console.log (b)
+} );
+splitToWords ("asb abc", function toAlert (a) {
+	alert (a)
+ });
