@@ -1,0 +1,30 @@
+ function deepCopy(obj) {
+            if (obj == null || typeof obj != "object") {
+                return obj;
+            }
+            if (obj instanceof Array) {
+                var arrayCopy = new Array();
+                for (var i = 0; i < obj.length; i++) {
+                    arrayCopy[i] = deepCopy(obj[i]);
+                }
+                return arrayCopy;
+            }
+            if (obj instanceof Object) {
+                var objectCopy = new Object();
+                for (var attribute in obj) {
+                    if (obj.hasOwnProperty(attribute)) {
+                        objectCopy[attribute] = deepCopy(obj[attribute]);
+                    }
+                }
+                return objectCopy;
+            }
+        }
+        var person = {
+            name: "John",
+            lastName: "Snow",
+            age: "30"
+        }
+        var copied = deepCopy(person);
+    console.log (person);
+    console.log ("Copy");
+    console.log (copied);
